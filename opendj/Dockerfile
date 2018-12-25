@@ -8,7 +8,7 @@ ENV PORT=1389
 
 ENV LDAPS_PORT=1636
 
-ENV BASE_DN="dc=am,dc=gazprombank,dc=ru"
+ENV BASE_DN="dc=example,dc=com"
 
 ENV ROOT_USER_DN="cn=Directory Manager"
 
