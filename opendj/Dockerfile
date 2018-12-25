@@ -8,15 +8,13 @@ ENV PORT=1389
 
 ENV LDAPS_PORT=1636
 
-#will be defined in openshift
-
+#defined in openshift
 #ENV BASE_DN="dc=example,dc=com"
-
 #ENV ROOT_USER_DN="cn=Directory Manager"
-
 #ENV ROOT_PASSWORD=password
+#ENV OPENDJ_MASTER_SERVER="opendj-master"
 
-ENV VERSION=4.2.5
+ENV VERSION=4.3.1
 
 ENV OPENDJ_USER="opendj"
 
@@ -46,5 +44,3 @@ USER $OPENDJ_USER
 EXPOSE $PORT $LDAPS_PORT 4444
 
 CMD ["/opt/opendj/run.sh"]
-
-USER 1001
