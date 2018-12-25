@@ -1,6 +1,6 @@
-MAINTAINER Open Identity Platform Community <open-identity-platform-opendj@googlegroups.com>
-
 FROM java:8
+
+#MAINTAINER Open Identity Platform Community <open-identity-platform-opendj@googlegroups.com>
 
 ENV ADD_BASE_ENTRY="--addBaseEntry"
 
