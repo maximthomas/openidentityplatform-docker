@@ -1,6 +1,6 @@
 FROM java:8
 
-#MAINTAINER Open Identity Platform Community <open-identity-platform-opendj@googlegroups.com>
+MAINTAINER Open Identity Platform Community <open-identity-platform-opendj@googlegroups.com>
 
 ENV ADD_BASE_ENTRY="--addBaseEntry"
 
@@ -8,11 +8,13 @@ ENV PORT=1389
 
 ENV LDAPS_PORT=1636
 
-ENV BASE_DN="dc=example,dc=com"
+#will be defined in openshift
 
-ENV ROOT_USER_DN="cn=Directory Manager"
+#ENV BASE_DN="dc=example,dc=com"
 
-ENV ROOT_PASSWORD=password
+#ENV ROOT_USER_DN="cn=Directory Manager"
+
+#ENV ROOT_PASSWORD=password
 
 ENV VERSION=4.2.5
 
