@@ -38,7 +38,7 @@ echo "Will sleep for a bit to ensure master is up"
 sleep 30
 
 
-${PWD}/bin/dsreplication enable --host1 $MYHOSTNAME --port1 4444 \
+/opt/opendj/bin/dsreplication enable --host1 $MYHOSTNAME --port1 4444 \
   --bindDN1 "cn=directory manager" \
   --bindPassword1 $PASSWORD --replicationPort1 8989 \
   --host2 $MASTER --port2 4444 --bindDN2 "cn=directory manager" \
@@ -47,7 +47,7 @@ ${PWD}/bin/dsreplication enable --host1 $MYHOSTNAME --port1 4444 \
 
 echo "initializing replication"
 
-${PWD}/bin/dsreplication initialize --baseDN $BASE_DN \
+/opt/opendj/bin/dsreplication initialize --baseDN $BASE_DN \
   --adminUID admin --adminPassword $PASSWORD \
   --hostSource $MYHOSTNAME --portSource 4444 \
   --hostDestination $MASTER --portDestination 4444 -X -n
