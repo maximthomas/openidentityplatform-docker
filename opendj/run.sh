@@ -27,9 +27,9 @@ if [ ! -d ./data/config ] ; then
    echo "Running $BOOTSTRAP"
    sh "${BOOTSTRAP}"
 
-   # Check if DJ_MASTER_SERVER var is set. If it is - replicate to that server
+   # Check if MASTER_SERVER var is set. If it is - replicate to that server
    if [ ! -z ${MASTER_SERVER+x} ];  then
-      /opt/opendj/bootstrap/replicate.sh $MASTER_SERVER
+      /opt/opendj/bootstrap/replicate.sh
    fi
 else
  exec ./bin/start-ds --nodetach
