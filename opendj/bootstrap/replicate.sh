@@ -40,14 +40,14 @@ sleep 30
 
 /opt/opendj/bin/dsreplication enable --host1 $MYHOSTNAME --port1 4444 \
   --bindDN1 "cn=directory manager" \
-  --bindPassword1 $PASSWORD --replicationPort1 8989 \
+  --bindPassword1 $ROOT_PASSWORD --replicationPort1 8989 \
   --host2 $MASTER --port2 4444 --bindDN2 "cn=directory manager" \
-  --bindPassword2 $PASSWORD --replicationPort2 8989 \
-  --adminUID admin --adminPassword $PASSWORD --baseDN $BASE_DN -X -n
+  --bindPassword2 $ROOT_PASSWORD --replicationPort2 8989 \
+  --adminUID admin --adminPassword $ROOT_PASSWORD --baseDN $BASE_DN -X -n
 
 echo "initializing replication"
 
 /opt/opendj/bin/dsreplication initialize --baseDN $BASE_DN \
-  --adminUID admin --adminPassword $PASSWORD \
+  --adminUID admin --adminPassword $ROOT_PASSWORD \
   --hostSource $MYHOSTNAME --portSource 4444 \
   --hostDestination $MASTER --portDestination 4444 -X -n
