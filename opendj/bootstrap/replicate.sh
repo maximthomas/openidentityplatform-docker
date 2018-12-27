@@ -9,7 +9,7 @@ MASTER=$1
 # The hostname has to be a fully resolvable DNS name in the cluster
 # If the service is called
 
-MYHOSTNAME=`hostname -f`
+MYHOSTNAME=${MYHOSTNAME:-`hostname -f`}
 
 echo "Setting up replication from $MYHOSTNAME to $MASTER"
 

@@ -24,7 +24,7 @@ ENV OPENDJ_USER="opendj"
 
 WORKDIR /opt
 
-RUN apt-get install -y wget unzip
+RUN apt-get install -y wget unzip vim sudo
 
 RUN wget --show-progress --progress=bar:force:noscroll --quiet \
   https://github.com/OpenIdentityPlatform/OpenDJ/releases/download/$VERSION/opendj-$VERSION.zip && \
@@ -38,7 +38,7 @@ ADD bootstrap/ /opt/opendj/bootstrap/
 
 ADD run.sh /opt/opendj/run.sh
 
-RUN useradd -m -r -u 1001 -g root $OPENDJ_USER
+RUN useradd -m -r -u 1001 -G root,sudo $OPENDJ_USER
 
 RUN chgrp -R 0 /opt/opendj && \
     chmod -R g=u /opt/opendj
