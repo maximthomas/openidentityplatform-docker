@@ -24,7 +24,10 @@ ENV OPENDJ_USER="opendj"
 
 WORKDIR /opt
 
-RUN apt-get install -y wget unzip vim sudo
+#RUN apt-get install -y wget unzip
+
+#for verbose:
+RUN apt-get update && apt-get install -y apt-utils vim sudo
 
 RUN wget --show-progress --progress=bar:force:noscroll --quiet \
   https://github.com/OpenIdentityPlatform/OpenDJ/releases/download/$VERSION/opendj-$VERSION.zip && \
