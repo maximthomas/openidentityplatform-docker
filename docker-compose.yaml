@@ -1,0 +1,26 @@
+version: '3.9'
+
+services:
+  openam:
+    image: openidentityplatform/openam:latest
+    ports:
+      - "8080:8080"
+    hostname: openam.example.com
+    volumes:
+      - ./persistence/openam:/usr/openam/config
+
+  opendj:
+    image: openidentityplatform/opendj:latest
+    hostname: opendj.example.com
+    ports:
+      - "1389:1389"
+      - "1636:1636"
+      - "4444:4444"
+    volumes:
+      - ./opendj/bootstrap/data/:/opt/opendj/bootstrap/data
+      - ./opendj/bootstrap/schema/:/opt/opendj/bootstrap/schema
+      - ./persistence/opendj:/opt/opendj/data
+    environment:
+      - BASE_DN=dc=openam,dc=openidentityplatform,dc=org
+
+    

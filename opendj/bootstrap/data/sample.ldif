@@ -1,4 +1,4 @@
-dn: ou=people,dc=example,dc=com
+dn: ou=people,dc=openam,dc=openidentityplatform,dc=org
 objectClass: organizationalUnit
 objectClass: top
 ou: people
